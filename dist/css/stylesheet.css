@@ -1,0 +1,77 @@
+.content{
+    border:1px solid #000;
+    width:50%;
+    height:100%;
+    margin:0 auto;
+}
+
+
+/* this is the number caller */
+#outter-circle{
+
+    width:20%;
+    border-radius: 70%;
+    border:3px solid #000;
+    height:150px;
+    background-color: cornflowerblue;
+}
+
+.no-border{
+    outline:none;
+    border:none;
+    width:60%;
+    text-align: center;
+}
+
+.marked{
+    background-color: red;
+}
+
+#inner-circle{
+    /* remove fixed and work with margin instead*/
+    width:5%;
+    background-color: #ffffff;
+    border:2px solid #000;
+    border-radius: 50%;
+    height:75px;
+    position:fixed;
+    top:4.8%;
+    left:27.9%;
+}
+
+#number-holder{
+    /* remove fixed and work with margin instead*/
+    position: fixed;
+    /* margin-top:80px; */
+    /* margin-left:25px; */
+    top:7.5%;
+    left:29.8%;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size:1.6em;
+    font-weight:bold;
+}
+
+#numbers{
+    float:left;
+    border: 1px solid purple;
+    width:400px;
+    height:400px;
+}
+
+
+.display-number{
+
+    float:left;
+    padding:1px;
+    margin:10px 0 0 10px;
+    border:1px solid #000;
+    border-radius: 100%;
+    width:25px;
+    height:20px;
+    text-align: center;
+    font-size:16px;
+    /*background-color: darkgreen; */
+    color:#000000;
+    box-shadow: 5px 10px #ffffff;
+
+}
