@@ -128,9 +128,11 @@ let counter = 0;
 var interval = setInterval(() => {
     displayNextNumber();
     counter++;
-    console.log(counter);
-    console.log(usedNumbers);
-    console.log(bingoNumber);
+
+    //testing purposes to track calls and numbers left
+    //console.log(counter);
+    //console.log(usedNumbers);
+    //console.log(bingoNumber);
  
 
     //stops setInterval when counter hits 90
