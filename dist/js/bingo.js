@@ -65,15 +65,7 @@ function markCalledNumbers(markNumber)
     var span = all.querySelectorAll('input');
 
     span[markNumber].setAttribute('class', 'no-border marked');
-    //span.forEach((number) => {
-
-    //    if (usedNumbers.includes(number)) {
-            
-    //        number.setAttribute('class', 'marked');
-
-    //    }
-
-    //});
+   
 }
 
 /**
@@ -102,7 +94,7 @@ function createElement(number)
 function displayNumbers()
 {
 
-    //generates numbers 1 - 90
+    //generates numbers 1 - 90 check test
     for(let i = 1; i <= 90; i++){
         
          createElement(i);
