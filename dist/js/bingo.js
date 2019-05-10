@@ -94,7 +94,7 @@ function createElement(number)
 function displayNumbers()
 {
 
-    //generates numbers 1 - 90 check test
+    //generates numbers 1 - 90 check test2
     for(let i = 1; i <= 90; i++){
         
          createElement(i);
