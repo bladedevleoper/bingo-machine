@@ -15,49 +15,48 @@ const bingoNumber = [];
 const usedNumbers = [];
 
 
+/**
+ * generates a random number between 90 and 1, and does a check on the next number if it has been called, if number has been called then repeat with a recursive function until a non used value
+ */
+
 function getNumber() {
-    //var generate = Math.round(Math.random() * (90-1));
+    
     var generate = Math.round(Math.random() * (91 - 1));
 
-    console.log(`generated key ${generate}`);
+    //console.log(`generated key ${generate}`);
 
         if ( usedNumbers.includes(generate) ) {
         
             //using a recursive function to call a new value until
             //the new value is not in the used numbers array
-            console.log('new number needed as ' + generate );
+            //console.log('new number needed as ' + generate );
             return getNumber();
             
         }
-        
+    
+
+    //checks if the value exists in the bingoNumber array
     var index = bingoNumber.indexOf(generate);
     
+    //if index is greater than -1 then it will remove the element from the bingoNumber array
     if ( index > -1 ) {
         bingoNumber.splice(index, 1);
     } 
 
-    // const all = document.querySelector('#numbers');
-    // var span = all.querySelectorAll('input');
-    // console.log(span[0].value);
 
-    //marks off called number on board
+    //marks off called number, but subtract the returned number by one to get the key value to be used in the querySelectorAll('input')
     var mark = (generate - 1);
     markCalledNumbers(mark);
 
-    // const all = document.querySelector('#numbers');
-    // var span = all.querySelectorAll('input');
-
-
-    //will mark the called number, had to minus the generate variable by 1 as this isn't the same keys as usedNumber array
-    //this will allow for the exact number to be called
-    
-    
-
-    //console.log('bingo numbers left' + ' ' + bingoNumber);
     return generate;
 
 }
 
+/**
+ * 
+ * @param {int} markNumber the current called number
+ * find the number within the querySelectorAll of all inputs and set the class of marked
+ */
 
 function markCalledNumbers(markNumber)
 {
@@ -90,7 +89,9 @@ function createElement(number)
 
 }
 
-
+/**
+ * Creates bingo bored nad populates with the bingo numbers and populates the bignoNumber array
+ */
 function displayNumbers()
 {
 
@@ -103,8 +104,11 @@ function displayNumbers()
 
 }
 
+/**
+ * displayNextNumber gets a number generated from getNumber and then appends the number to the text content of #number-holder, an then pushes the called number to the usedNumbers array
+ */
 
-function randomNumberGenerator(number)
+function displayNextNumber()
 {
     //generates number between 1 and 90
     var generatedNumber = getNumber();
@@ -118,13 +122,11 @@ function randomNumberGenerator(number)
 }
 
 displayNumbers();
-//callNumber();
-
 
 //timer to call random number
 let counter = 0;
 var interval = setInterval(() => {
-    randomNumberGenerator();
+    displayNextNumber();
     counter++;
     console.log(counter);
     console.log(usedNumbers);
