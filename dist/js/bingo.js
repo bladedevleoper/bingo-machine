@@ -7,6 +7,7 @@
  * Do an array with 90 numbers, an then the random number will pull the number from the array
  * */
 
+ //generate player card when the dom has finished loading
 window.addEventListener('domContentLoaded', () => {
     console.log('loaded');
 });
@@ -125,21 +126,40 @@ displayNumbers();
 
 //timer to call random number
 let counter = 0;
-var interval = setInterval(() => {
-    displayNextNumber();
-    counter++;
+var startInterval = () => {
 
-    //testing purposes to track calls and numbers left
-    //console.log(counter);
-    //console.log(usedNumbers);
-    //console.log(bingoNumber);
- 
+    const stop = document.querySelector('#start');
+    stop.textContent = 'Stop Bingo';
+    stop.removeAttribute('onlick');
+    stop.setAttribute('onlick', 'stopInterval()');
+    setInterval(() => {
+        displayNextNumber();
+        counter++;
 
-    //stops setInterval when counter hits 90
-    if (counter == 90) {
-        clearInterval(interval);
-    }
+        //testing purposes to track calls and numbers left
+        //console.log(counter);
+        //console.log(usedNumbers);
+        //console.log(bingoNumber);
+
+        //stops setInterval when counter hits 90
+        if (counter == 90) {
+            stopInterval(startInterval);
+        }
+    
+    }, 5000);
+}
 
 
-}, 5000);
+function generatePlayingCard(int)
+{
+
+}
+
+const stopInterval = () => {
+    
+    clearInterval(startInterval);
+    const stop = document.querySelector('#start');
+    stop.setAttribute('onlick', 'startInterval()');
+    stop.textContent = 'Start Bingo';
+}
 
