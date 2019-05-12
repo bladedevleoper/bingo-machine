@@ -75,3 +75,26 @@
     box-shadow: 5px 10px #ffffff;
 
 }
+.square{
+    border:1px solid #000;
+    height:20px;
+    width:20px;
+    float:left;
+}
+.row-1{
+    float:left;
+}
+.row-2{
+    float:left;
+}
+.row-3{
+    float:left;
+}
+
+#game-board{
+    float:left;
+    width:395px;
+    height:100%;
+    border: 1px solid #000;
+    margin: 0 auto;
+}
